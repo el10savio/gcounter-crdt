@@ -11,8 +11,8 @@ CRDTs (Commutative Replicated Data Types) are a certain form of data types that 
 After building a cluster of GCounter nodes we can now increment counts to either one or many nodes in the cluster.
 
 ```
-$ curl -i -X POST localhost:8080/gcounter/increment
-$ curl -i -X POST localhost:8081/gcounter/increment
+$ curl -i -X GET localhost:8080/gcounter/increment
+$ curl -i -X GET localhost:8081/gcounter/increment
 ```
 
 When looking up the total count in the counter they then sync up with each other and thus return consistent values every time from any node in the cluster
