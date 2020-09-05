@@ -63,7 +63,7 @@ func (gcounter GCounter) GetTotal() int {
 	// Initialize the total count as 0
 	total := 0
 
-	// Iterative over teh count map
+	// Iterative over the count map
 	// and sum each node's count
 	for _, count := range gcounter.Count {
 		total += count

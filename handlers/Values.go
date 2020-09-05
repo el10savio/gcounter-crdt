@@ -13,7 +13,7 @@ func Values(w http.ResponseWriter, r *http.Request) {
 	// Get the local GCounter values
 	counter := GCounter.GetCount()
 
-	// DEBUG log in the case of successfull
+	// DEBUG log in the case of successful
 	// list indicating the counter
 	log.WithFields(log.Fields{
 		"counter": counter,
