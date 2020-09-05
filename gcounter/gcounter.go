@@ -12,7 +12,7 @@ type GCounter struct {
 }
 
 const (
-	// singleNodeName is the node name assigned to 
+	// singleNodeName is the node name assigned to
 	// the node when it is the only node
 	// present in the cluster
 	singleNodeName = "node"
@@ -20,13 +20,13 @@ const (
 
 // Initialize returns a new empty GCounter
 func Initialize(node string) GCounter {
-	// Set the node name as singleNodeName 
+	// Set the node name as singleNodeName
 	// in case of single node
 	if node == "" {
 		node = singleNodeName
 	}
 
-	// Initialize count map and initialize 
+	// Initialize count map and initialize
 	// the count for our node as 0
 	countMap := make(map[string]int)
 	countMap[node] = 0
@@ -35,10 +35,10 @@ func Initialize(node string) GCounter {
 	return GCounter{Count: countMap}
 }
 
-// Increment increases the count for 
+// Increment increases the count for
 // a given node in the GCounter by 1
 func (gcounter GCounter) Increment(node string) map[string]int {
-	// Set the node name as singleNodeName 
+	// Set the node name as singleNodeName
 	// in case of single node
 	if node == "" {
 		node = singleNodeName
@@ -57,13 +57,13 @@ func (gcounter GCounter) GetCount() map[string]int {
 	return gcounter.Count
 }
 
-// GetTotal returns the sum of the counts 
+// GetTotal returns the sum of the counts
 // of all the nodes in GCounter.Count
 func (gcounter GCounter) GetTotal() int {
 	// Initialize the total count as 0
 	total := 0
 
-	// Iterative over teh count map 
+	// Iterative over teh count map
 	// and sum each node's count
 	for _, count := range gcounter.Count {
 		total += count
@@ -92,10 +92,10 @@ func Merge(GCounters ...GCounter) GCounter {
 }
 
 // SetCount is a utility function  used in tests
-// that assigns the GCounter's Count 
+// that assigns the GCounter's Count
 // value to a specified value
 func (gcounter GCounter) SetCount(node string, value int) map[string]int {
-	// Set the node name as singleNodeName 
+	// Set the node name as singleNodeName
 	// in case of single node
 	if node == "" {
 		node = singleNodeName
@@ -110,7 +110,7 @@ func (gcounter GCounter) SetCount(node string, value int) map[string]int {
 
 // Clear is a utility function used for tests that clears the GCounter
 func (gcounter GCounter) Clear(node string) map[string]int {
-	// Iterate over the GCounter Count 
+	// Iterate over the GCounter Count
 	// map and delete each entry
 	for node := range gcounter.Count {
 		delete(gcounter.Count, node)
@@ -123,7 +123,7 @@ func (gcounter GCounter) Clear(node string) map[string]int {
 	return gcounter.Count
 }
 
-// Max computes the maximum of 
+// Max computes the maximum of
 // 2 int values passed to it
 func Max(value1, value2 int) int {
 	if value1 > value2 {

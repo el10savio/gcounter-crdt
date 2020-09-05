@@ -34,7 +34,7 @@ func TestGetCount(t *testing.T) {
 	gcounter.Count = gcounter.Clear(testNode)
 }
 
-// TestGetCount_UpdatedValue checks the functionality of GCounter GetCount() 
+// TestGetCount_UpdatedValue checks the functionality of GCounter GetCount()
 // when values are incremented in the GCounter it should return
 // all the count map entries added to the GCounter
 func TestGetCount_UpdatedValue(t *testing.T) {
@@ -76,7 +76,7 @@ func TestSetCount(t *testing.T) {
 	gcounter.Count = gcounter.Clear(testNode)
 }
 
-// TestSetCount_UpdatedValue checks the functionality of GCounter SetCount(testNode, value) 
+// TestSetCount_UpdatedValue checks the functionality of GCounter SetCount(testNode, value)
 // when multiple SetCounts are done to GCounter it should return
 // the updated count map entries added to the GCounter
 func TestSetCount_UpdatedValue(t *testing.T) {
@@ -159,7 +159,7 @@ func TestGetTotal(t *testing.T) {
 	gcounter.Count = gcounter.Clear(testNode)
 }
 
-// TestGetTotal checks GetTotal function when 
+// TestGetTotal checks GetTotal function when
 // no node counts are present, it should then return 0
 func TestGetTotal_EmptyCount(t *testing.T) {
 	expectedCount := 0
